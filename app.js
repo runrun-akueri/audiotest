@@ -113,11 +113,6 @@ audio.addEventListener("timeupdate", (e) => {
         const title = this.querySelector('.soundList-title').innerText;
         const description = this.querySelector('.soundList-description').innerText;
         const songData = this.getAttribute('data-sound');;
-        currentDuration = parseInt(this.getAttribute('data-time'));
-        currentTime = 0;
-        minutes = Math.floor(currentDuration / 60);
-        seconds = Math.floor(currentDuration % 60);
-
         setPlayerSong(songData, imageUrl);
         setPlayerText(title, description, currentDuration);
         
@@ -139,17 +134,6 @@ audio.addEventListener("timeupdate", (e) => {
     playerDescription.innerText = description;
   };
 
-  const updateTimerText = () => {
-    currentTime = song.currentTime;
-    leftDuration = currentDuration - currentTime;
-    minutes = Math.floor(leftDuration / 60);
-    seconds = Math.floor(leftDuration % 60);
-
-    
-  };
-
-  
-
   const updatePlayerByTimeUpdate = () => {
     song.addEventListener('timeupdate', () => {
       const currentSrc = song.getAttribute('src');
@@ -160,8 +144,7 @@ audio.addEventListener("timeupdate", (e) => {
 
         updateCircle();
         updateTimerText();
-      } else {
-        
+      } else { 
         lastSrc = undefined;
       }
     });
