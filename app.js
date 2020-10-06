@@ -2,9 +2,7 @@ const app = () => {
   const playBtn = document.querySelector('.player-timer-btn');
   const song = document.querySelector('.song');
   const player = document.querySelector('.player');
-  //soundsは曲選択で使用している。
   const sounds = document.querySelectorAll('.soundList-item');
-  
   
   let currentTime = song.currentTime;
   let currentDuration = 0;
@@ -14,7 +12,6 @@ const app = () => {
 
 //時間取得
   const audio = document.getElementsByTagName("audio")[0]
-
   audio.addEventListener("timeupdate", (e) => {
   const current = Math.floor(audio.currentTime)
   const duration = Math.round(audio.duration)
@@ -25,6 +22,7 @@ const app = () => {
     document.getElementById('seekbar').style.backgroundSize = percent + '%'
   }
 })
+
 //シークバー
   document.getElementById('seekbar').addEventListener("click", (e) => {
   const duration = Math.round(audio.duration)
@@ -79,7 +77,7 @@ audio.addEventListener("timeupdate", (e) => {
     mapCheckPlayingEvent();
     mapClickEventToSoundBtn();
   };
-
+//再生中かどうか判断する関数
   const mapCheckPlayingEvent = () => {
     playBtn.addEventListener('click', () => {
       checkPlaying(song);
@@ -120,12 +118,13 @@ audio.addEventListener("timeupdate", (e) => {
     });
   };
 
+//再生中のサムネ表示関数
   const setPlayerSong = (songData, imageUrl) => {
     song.src = songData;
     player.style.backgroundImage = `url(${imageUrl})`;
     playBtn.src = 'svg/play.svg';
   }
-
+//再生中のタイトルを表示させる関数
   const setPlayerText = (title, description) => {
     const playerTitle = document.querySelector('.title-headline');
     const playerDescription = document.querySelector('.title-description');
@@ -133,7 +132,7 @@ audio.addEventListener("timeupdate", (e) => {
     playerTitle.innerText = title;
     playerDescription.innerText = description;
   };
-
+//必要　何か調べる。
   const updatePlayerByTimeUpdate = () => {
     song.addEventListener('timeupdate', () => {
       const currentSrc = song.getAttribute('src');
@@ -141,18 +140,23 @@ audio.addEventListener("timeupdate", (e) => {
 
       if (currentSrc === lastSrc || lastSrc === undefined) {
         lastSrc = currentSrc;
-
-        updateCircle();
-        updateTimerText();
       } else { 
         lastSrc = undefined;
       }
     });
-  }
-
-  
-   
+  }   
   }
 
 
 app();
+
+//音量スライダー
+var myAudio = new Audio('');
+var volume = document.getElementById('volume');
+
+volume.addEventListener('change', function () {
+  var volumeValue = (volume.value.length == 1) ? '0.0' + volume.value : '0.' +
+    volume.value;
+  myAudio.volume = volumeValue;
+}, false);
+
