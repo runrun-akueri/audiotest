@@ -95,6 +95,17 @@ audio.addEventListener("timeupdate", (e) => {
     }
   };
 
+
+//曲選択時に再生ボタンが切り替わるようにしたい　動いていない。
+  const hoge = () => {
+    sounds.addEventListener('click', () => {
+    playBtn.src = 'svg/stop.svg';  
+    });
+  }
+
+//ここまで動いていない。
+
+
   const checkSongEnding = () => {
     if (currentTime > currentDuration) {
       song.pause();
@@ -150,7 +161,7 @@ audio.addEventListener("timeupdate", (e) => {
 
 app();
 
-//音量スライダー
+//音量スライダー 動作しない　値はとれている
 var myAudio = new Audio('');
 var volume = document.getElementById('volume');
 
@@ -159,4 +170,3 @@ volume.addEventListener('change', function () {
     volume.value;
   myAudio.volume = volumeValue;
 }, false);
-
