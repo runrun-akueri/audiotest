@@ -13,7 +13,7 @@
       <audio autoplay class="song" src="sounds/pop.mp3" loop></audio>
       <div class="player-timer">
         <!-- Play svg -->
-        <img src="svg/play.svg" alt="" class="player-timer-btn" />
+        <img src="svg/play.svg" alt="" class="playertimerbtn" id="test" />
        	 <div class="seek-wrapper">
 	        <div id="seekbar"></div>
 	        <div id="time">
@@ -39,6 +39,7 @@
           class="soundList-item"
           data-sound="sounds/pop.mp3"
           data-image="img/pop.png"
+          onclick="test();"
         >
           <img src="img/pop.png" alt="" class="soundList-image" />
           <div class="soundList-text">
@@ -50,9 +51,10 @@
         <div
           class="soundList-item"
           data-sound="sounds/new.mp3"
+          onclick="test();"
           data-image="img/new.png"
         >
-          <img src="img/new.png" alt="" class="soundList-image" />
+          <img  src="img/new.png" alt="" class="soundList-image" />
           <div class="soundList-text">
             <span class="soundList-title">NEW</span>
             <span class="soundList-description">ポップパルシェンズ</span>
@@ -63,6 +65,7 @@
           class="soundList-item"
           data-sound="sounds/ocean_sunset.mp3"
           data-image="img/ocean.jpg"
+          onclick="test();"
         >
           <img src="img/ocean.jpg" alt="" class="soundList-image" />
           <div class="soundList-text">
