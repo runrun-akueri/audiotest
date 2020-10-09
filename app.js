@@ -1,5 +1,5 @@
 const app = () => {
-  const playBtn = document.querySelector('.player-timer-btn');
+  const playBtn = document.querySelector('.playertimerbtn');
   const song = document.querySelector('.song');
   const player = document.querySelector('.player');
   const sounds = document.querySelectorAll('.soundList-item');
@@ -96,14 +96,6 @@ audio.addEventListener("timeupdate", (e) => {
   };
 
 
-//曲選択時に再生ボタンが切り替わるようにしたい　動いていない。
-  const hoge = () => {
-    sounds.addEventListener('click', () => {
-    playBtn.src = 'svg/stop.svg';  
-    });
-  }
-
-//ここまで動いていない。
 
 
   const checkSongEnding = () => {
@@ -114,7 +106,7 @@ audio.addEventListener("timeupdate", (e) => {
     }
   };
 
-//曲選択のｊｓ
+//曲選択の関数
   const mapClickEventToSoundBtn = () => {
     sounds.forEach(sound => {
       sound.addEventListener('click', function() {
@@ -143,7 +135,7 @@ audio.addEventListener("timeupdate", (e) => {
     playerTitle.innerText = title;
     playerDescription.innerText = description;
   };
-//必要　何か調べる。
+//必要 何か調べる。
   const updatePlayerByTimeUpdate = () => {
     song.addEventListener('timeupdate', () => {
       const currentSrc = song.getAttribute('src');
@@ -161,7 +153,7 @@ audio.addEventListener("timeupdate", (e) => {
 
 app();
 
-//音量スライダー 動作しない　値はとれている
+//音量スライダー 動作しない 値はとれている
 var myAudio = new Audio('');
 var volume = document.getElementById('volume');
 
@@ -170,3 +162,14 @@ volume.addEventListener('change', function () {
     volume.value;
   myAudio.volume = volumeValue;
 }, false);
+
+//曲選択時に再生ボタンが切り替わるようにしたい 動いていない。
+  function test(){
+  const foo = document.getElementById('test');
+  foo.setAttribute('src', 'svg/stop.svg');
+  return;
+  
+  }
+
+
+//ここまで動いていない。
