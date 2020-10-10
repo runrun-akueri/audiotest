@@ -57,7 +57,7 @@ const app = () => {
   return hms
 }
 
-audio.addEventListener("timeupdate", (e) => {
+  audio.addEventListener("timeupdate", (e) => {
   const current = Math.floor(audio.currentTime)
   const duration = Math.round(audio.duration)
   if (!isNaN(duration)) {
@@ -95,9 +95,6 @@ audio.addEventListener("timeupdate", (e) => {
     }
   };
 
-
-
-
   const checkSongEnding = () => {
     if (currentTime > currentDuration) {
       song.pause();
@@ -125,7 +122,7 @@ audio.addEventListener("timeupdate", (e) => {
   const setPlayerSong = (songData, imageUrl) => {
     song.src = songData;
     player.style.backgroundImage = `url(${imageUrl})`;
-    playBtn.src = 'svg/play.svg';
+    
   }
 //再生中のタイトルを表示させる関数
   const setPlayerText = (title, description) => {
@@ -148,28 +145,22 @@ audio.addEventListener("timeupdate", (e) => {
       }
     });
   }   
-  }
+    //音量スライダー 
+    var myAudio = new Audio('');
+    var volume = document.getElementById('hoge');
 
-
+    hoge.addEventListener('change', function () {
+      var volumeValue = (hoge.value.length == 1) ? '0.0' + hoge.value : '0.' +
+        hoge.value;
+      myAudio.hoge = volumeValue;
+      song.volume = volumeValue;
+    }, false);
+}
 app();
 
-//音量スライダー 動作しない 値はとれている
-var myAudio = new Audio('');
-var volume = document.getElementById('volume');
-
-volume.addEventListener('change', function () {
-  var volumeValue = (volume.value.length == 1) ? '0.0' + volume.value : '0.' +
-    volume.value;
-  myAudio.volume = volumeValue;
-}, false);
-
-//曲選択時に再生ボタンが切り替わるようにしたい 動いていない。
+//曲選択時に再生ボタンが切り替わるように
   function test(){
   const foo = document.getElementById('test');
   foo.setAttribute('src', 'svg/stop.svg');
   return;
-  
   }
-
-
-//ここまで動いていない。
