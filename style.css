@@ -26,11 +26,12 @@ body {
 
 
 
-.player-timer-btn {
+.playertimerbtn {
   position: absolute;
   top: 42%;
   left: 50%;
   transform: translate(-54%, -50%);
+  cursor: pointer;
 }
 
 .seek-wrapper {
@@ -45,6 +46,7 @@ body {
   margin: 1em;
   border-radius: 5px;
   background: linear-gradient(#ccc, #ccc) no-repeat #eee;
+   cursor : pointer;
 }
 
 #time {
@@ -58,6 +60,10 @@ body {
 
 .timer-space {
 	color: white;
+}
+
+.volume-slider {
+	cursor: pointer;
 }
 
 .selection {
@@ -120,6 +126,7 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
+  cursor: pointer;
 }
 
 .soundList-title {
@@ -134,3 +141,4 @@ body {
   display: block;
   color: white;
 }
+
