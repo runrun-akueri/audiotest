@@ -19,11 +19,12 @@ const app = () => {
     document.getElementById('current').innerHTML = current
     document.getElementById('duration').innerHTML = duration
     const percent = Math.round((audio.currentTime/audio.duration)*1000)/10
+//シークバー　background-imageのbackgroundSize幅を変更して表現
     document.getElementById('seekbar').style.backgroundSize = percent + '%'
   }
 })
 
-//シークバー
+//シークバークリックした位置からの再生時間取得
   document.getElementById('seekbar').addEventListener("click", (e) => {
   const duration = Math.round(audio.duration)
   if(!isNaN(duration)){
