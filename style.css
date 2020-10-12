@@ -45,7 +45,7 @@ body {
   height: 10px;
   margin: 1em;
   border-radius: 5px;
-  background: linear-gradient(#ccc, #ccc) no-repeat #eee;
+  background: linear-gradient(#ff0000,#ff0000) no-repeat #eee;
    cursor : pointer;
 }
 
@@ -141,3 +141,4 @@ body {
   display: block;
   color: white;
 }
+
