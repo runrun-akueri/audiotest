@@ -1,52 +1,52 @@
-body {
+body ,p {
   margin: 0;
 }
 
+section {
+	position: relative;
+	width: 500px;
+	background-color: black;
+}
+
+
 .player {
   background-image: url('img/pop.png');
-  width: 500px;
-  height: 50vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center left;
+  background-size: contain;
+  width: 300px;
+  height: 200px;
+  margin: 50px 100px;
+
 }
 
 .player-timer {
-  position: relative;
-  height: 50vh;
+  height: 200px;
 }
 
-#time {
-  margin: 0 1em;
+.play-time {
+	display: flex;
 }
-#current, #duration {
-  padding: 0;
-  margin: .2em;
-}
-
-
 
 .playertimerbtn {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-54%, -50%);
+  margin-left: 200px;
   cursor: pointer;
+  width: 30px;
+  height:  30px;
+  display: block;
+  margin: 0 auto;
 }
 
 .seek-wrapper {
-	z-index: 10;
-	position: absolute;
 	top: 45%;
+	text-align: center;
 }
 
 #seekbar {
   width: 450px;
   height: 10px;
-  margin: 1em;
   border-radius: 5px;
   background: linear-gradient(#ff0000,#ff0000) no-repeat #eee;
    cursor : pointer;
+   margin: 0 auto;
 }
 
 #time {
@@ -55,64 +55,57 @@ body {
 
 #current, #duration {
 	color: white;
-	margin: auto;
 }
 
-.timer-space {
-	color: white;
+#current {
+	margin-right: 355px;
+	margin-left: 25px;
 }
 
 .volume-slider {
 	cursor: pointer;
+	width: 400px;
+  	height: 10px;
 }
 
 .selection {
   width: 500px;
-  height: calc(50vh + 20px);
-  background-color: #fff;
-  border-radius: 24px;
-  position: relative;
-  top: -20px;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  box-sizing: border-box;
+  height: 50vh;
   background-color: black;
 }
 
+
 .title {
-  padding-top: 20px;
+  padding-left: 20px;
   color: white;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
 }
 
 .selection-bar {
+	position: absolute;
     display: inline-block;
     width: 40px;
-    height: 2px;
+    height: 4px;
     background-color: #757575;
     left: 50%;
     transform: translateX(-50%);
-    position: relative;
     margin-top: 20px;
+    border-radius: 2px;
 }
 
 .title-headline {
   font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 8px;
 }
 
 .title-description {
-  margin-top: 0;
+  margin-bottom: 20px;
   font-size: .8rem;
-}
-
-.soundList {
-  margin-top: 32px;
+  color: red;
 }
 
 .soundList-text {
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
+ 
 }
 
 .soundList-image {
@@ -127,6 +120,7 @@ body {
   align-items: center;
   margin-bottom: 2rem;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .soundList-title {
@@ -134,11 +128,16 @@ body {
   font-weight: bold;
   display: block;
   color: white;
+  margin-bottom: 5px;
 }
 
 .soundList-description {
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   display: block;
   color: white;
 }
 
+.volume-icon:before {
+    content: "\f028";
+    color: white;
+}
