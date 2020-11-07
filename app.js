@@ -89,10 +89,10 @@ const app = () => {
   const checkPlaying = () => {
     if (song.paused) {
       song.play();
-      playBtn.src = 'svg/stop.svg';
+      playBtn.src = 'img/stop.jpg';
     } else {
       song.pause();
-      playBtn.src = 'svg/play.svg';
+      playBtn.src = 'img/play.jpg';
     }
   };
 
@@ -122,7 +122,7 @@ const app = () => {
 //再生中のサムネ表示関数
   const setPlayerSong = (songData, imageUrl) => {
     song.src = songData;
-    player.style.backgroundImage = `url(${imageUrl})`;
+    player.src = imageUrl;
     
   }
 //再生中のタイトルを表示させる関数
@@ -149,7 +149,7 @@ const app = () => {
     //音量スライダー 
     var myAudio = new Audio('');
     var volume = document.getElementById('hoge');
-
+    
     hoge.addEventListener('change', function () {
       var volumeValue = (hoge.value.length == 1) ? '0.0' + hoge.value : '0.' +
         hoge.value;
@@ -162,6 +162,6 @@ app();
 //曲選択時に再生ボタンが切り替わるように
   function test(){
   const foo = document.getElementById('test');
-  foo.setAttribute('src', 'svg/stop.svg');
+  foo.setAttribute('src', 'img/stop.jpg');
   return;
   }
